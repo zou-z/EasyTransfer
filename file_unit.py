@@ -55,8 +55,3 @@ def move(spath,dpath):
         return "dpath_not_exist"
     shutil.move(spath,dpath)
     return True
-
-if __name__=="__main__":
-    data=get_files('./files','')
-    print(type(data))
-    print(data)

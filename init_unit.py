@@ -27,6 +27,3 @@ def display_init_config(conf):
         print('%11s'%'端口:',conf['port'])
     print('%6s'%'文件共享位置:',conf['path'])
     print('-------------------------------')
-
-if __name__=="__main__":
-    print(get_init())
