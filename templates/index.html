@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>文件传输</title>
+    <link href="../static/images/favicon.ico" rel="shortcut icon"/>
+    <link href="../static/css/header.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/css/content.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/css/dialog.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/css/displaypicture.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../static/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../static/js/main.js"></script>
+    <script type="text/javascript" src="../static/js/move.js"></script>
+</head>
+<body>
+    <ul id="head">
+        <li><input class="hbd hbtn lbtn" type="button" onclick="Upward()"></li>
+        <li><input class="hbd hbtn rbtn" type="button" onclick="Backward()"></li>
+        <li class="lipath"><input id="path" type="text" value="" title="路径"/></li>
+        <li><a class="hbd aw2" href="javascript:GetFilesEx();">刷新</a></li>
+        <li>
+            <a class="hbd aw2" id="chooseall" href="javascript:void(0);">全选
+                <ul>
+                    <li onclick="javascript:SelectItem(3);" title="选择所有项目">所有</li>
+                    <li onclick="javascript:SelectItem(1);" title="选择所有文件夹">文件夹</li>
+                    <li onclick="javascript:SelectItem(2);" title="选择所有文件">文件</li>
+                    <li onclick="javascript:SelectItem(0);" title="清除目前所有已选择的项目">清除所选</li>
+                </ul>
+            </a>
+        </li>
+        <li><a class="hbd aw2" href="javascript:void(0);" id="delselected">删除</a></li>
+        <li><a class="hbd aw2" href="javascript:void(0);" id="pre-move">移动</a></li>
+        <li><a class="hbd aw5" href="javascript:void(0);" onclick="$('.newdir').slideDown(150);">新建文件夹</a></li>
+        <li><a class="hbd aw4" href="javascript:void(0);" onclick="$('.upload').slideDown(150);">上传文件</a></li>
+        <li><a class="hbd aw4" href="javascript:void(0);" onclick="$('.sendmsg').slideDown(150);">发送信息</a></li>
+    </ul>
+    <form class="dialog upload" action="" method="POST" enctype="multipart/form-data">
+        <input id="file" name="file" type="file">
+        <input id="filepath" name="filepath" type="hidden" value="/"/>
+        <input class="dialogbtn confirm" type="button" value="确 认" id="uploadfile">
+        <input class="dialogbtn cancel" type="button" value="取 消" onclick="$('.upload').slideUp(100);">
+    </form>
+    <div class="dialog newdir">
+        <span>请输入文件夹名称:</span>
+        <input class="newdirtext" type="text"/>
+        <input class="dialogbtn confirm" type="button" value="确 认" id="newdir">
+        <input class="dialogbtn cancel" type="button" value="取 消" onclick="$('.newdir').slideUp(100);">
+    </div>
+    <div class="dialog move">
+        <span id="move-path"></span>
+        <ul id="move-target"></ul>
+        <input class="dialogbtn confirm" type="button" value="确 认" id="start-move">
+        <input class="dialogbtn cancel" type="button" value="取 消" onclick="$('.move').slideUp(100);">
+    </div>
+    <div class="dialog sendmsg">
+        <input id="msgtext" type="text"/>
+        <input class="dialogbtn confirm" type="button" value="确 认" id="start-sendmsg">
+        <input class="dialogbtn cancel" type="button" value="取 消" onclick="$('.sendmsg').slideUp(100);">
+    </div>
+    <div id="content"></div>
+    <div id="displaypic" onclick="$(this).hide();" title="单击关闭">
+        <a href="#" title="单击下载" download="">
+            <img id="dispic" src=""/>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+*{padding: 0;margin: 0}
+a{text-decoration: none;color: black;}
+ul{list-style: none;}
+#head{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: whitesmoke;
+    box-shadow: 0 0 5px 0 gray;
+    display: flex;
+}
+#head li{float: left;margin: 10px 10px 6px 0;}
+#head .hbtn{
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+    outline: none;
+    border: 1px solid gainsboro;
+}
+.lbtn{background: url(../images/left.png);margin-left: 10px;}
+.rbtn{background: url(../images/right.png);}
+#head a{
+    display: block;
+    text-align: center;
+    border: 1px solid gainsboro;
+}
+#head .hbd:hover{border: 1px solid gray}
+#head .hbd:active{border: 1px solid royalblue}
+.lipath{width: 100%;display: flex;}
+#path{
+    width: 100%;
+    font-size: 15px;
+    height: 20px;
+}
+
+#chooseall:hover ul{display: block;}
+#chooseall ul{
+    display: none;
+    position: absolute;
+    box-shadow: 0 0 5px 0 gray;
+    background-color: white;
+    border: 1px solid lightgray;
+}
+#chooseall ul li{
+    float: none;
+    padding: 2px 5px 2px 5px;
+    margin: 0;
+}
+#chooseall ul li:hover{
+    background-color: gainsboro;
+}
+
+
+.aw2{width: 50px;}
+.aw4{width: 80px;}
+.aw5{width: 100px;}

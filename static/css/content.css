@@ -1,0 +1,32 @@
+#content{
+    margin-top: 42px;
+}
+.item{
+    float: left;
+    margin: 10px;
+    width: 94px;
+    border: 1px solid transparent;
+}
+.item *{display: block;}
+.item div{padding: 0;height: 12px;}
+.item input{display: none;}
+.item:hover{background-color: gainsboro;}
+.item:hover input{display: block;}
+.item input:checked{display: block;}
+.item img{
+    width: 70px;
+    height: 70px;
+    margin: 0 12px 0 12px;
+}
+.item span{
+    margin: 0 5px 0 5px;
+    font-size: 14px;
+    text-align: center;
+    white-space:pre-wrap;overflow: hidden ;
+}
+#tip{
+    display: inline-block;
+    width: 100%;
+    line-height: 200px;
+    text-align: center;
+}
