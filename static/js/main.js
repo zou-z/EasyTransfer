@@ -138,6 +138,8 @@ $(function(){
                 GetFilesEx();
             }else if(res=="exist"){
                 alert("创建失败!该项目已存在");
+            }else if(res=="patherror"){
+                alert("创建失败!路径有误");
             }
         });
     });

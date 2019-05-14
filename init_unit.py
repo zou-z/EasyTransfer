@@ -1,3 +1,4 @@
+import os
 import json
 import socket
 
@@ -18,6 +19,8 @@ def get_init():
     finally:
         s.close()
     data['ip']=ip
+    if not os.path.exists(data['path']):
+        os.mkdir(data['path'])
     return data
 
 def display_init_config(conf):

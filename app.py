@@ -69,7 +69,10 @@ def NewDir():
             path=conf['path']+path+'/'+name
         if os.path.exists(path):
             return "exist"
-        os.mkdir(path)
+        try:
+            os.mkdir(path)
+        except FileNotFoundError:
+            return "patherror"
         return "success"
 
 @app.route('/delete',methods=['POST'])
