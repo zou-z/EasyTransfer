@@ -1,16 +1,13 @@
 from flask import Flask
 from flask import render_template,request,make_response,send_from_directory
-import os,json
+import os,json,logging
 import file_unit
-import logging
+import init_unit
 
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 
-conf={
-    'port':8000,
-    'path':'./files'
-}
+conf=init_unit.get_init()
 
 app=Flask(__name__)
 
@@ -117,5 +114,5 @@ def TransferMsg():
 
 
 if __name__ == "__main__":
+    init_unit.display_init_config(conf)
     app.run(host='0.0.0.0',port=conf['port'])
-
